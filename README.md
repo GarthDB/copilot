@@ -21,3 +21,4 @@ var allowCrossDomain = function(req, res, next) {
   }
 };
 ```
+For now, Copilot is being designed for use with a vertical iPad. More work on other products/orientations to come.
