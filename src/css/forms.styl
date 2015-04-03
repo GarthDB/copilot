@@ -45,9 +45,11 @@ form
       display block
       width 100%
       box-sizing border-box
-    input
-      position absolute
-      right 0
-      top 0
-      height 100%
-      border-left 6px solid white
+    input:not(old)
+      width 28px
+      margin 0
+      padding 0
+      opacity 0
+.glucoseValue
+  height 125px
+  width 200px

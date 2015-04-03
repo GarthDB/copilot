@@ -60,22 +60,20 @@ var BgForm = React.createClass({
           <RadioGroup className="radioGroup" name="glucoseType" value="sensor" ref="glucoseType">
             <label htmlFor="meter">
               <span>Blood Drop</span>
-              <input type="radio" id="meter" value="Finger" onFocus={this.focusHandler}/>
+              <input type="radio" className="meter" value="Finger" onFocus={this.focusHandler}/>
             </label>
             <label htmlFor="sensor">
               <span>Dexcom</span>
-              <input type="radio" id="sensor" value="Sensor" defaultChecked="true" onFocus={this.focusHandler}/>
+              <input type="radio" className="sensor" value="Sensor" defaultChecked="true" onFocus={this.focusHandler}/>
             </label>
           </RadioGroup>
           <label htmlFor="glucoseValue">
-            <span>Glucose:</span>
-            <input type="number" step="any" id="glucoseValue" placeholder="Glucose Value" ref="glucoseValue" onFocus={this.focusHandler}/>
+            <input type="text" pattern="\d*" className="glucoseValue" placeholder="BG" ref="glucoseValue" onFocus={this.focusHandler}/>
+            <span>mg/dl</span>
           </label>
-          <label htmlFor="notes" className="extra-space">Additional Notes, Comments:</label>
-          <textarea id="notes" ref="notes" onFocus={this.focusHandler}></textarea><br/>
+          <textarea id="notes" placeholder="notes" ref="notes" onFocus={this.focusHandler}></textarea><br/>
           <label htmlFor="enteredBy">
-            <span>Entered By:</span>
-            <input type="text" id="enteredBy" ref="enteredBy" onFocus={this.focusHandler}/>
+            <input type="text" className="enteredBy" placeholder="initials" ref="enteredBy" onFocus={this.focusHandler}/>
           </label>
         </div>
         <div className="buttonGroup">
