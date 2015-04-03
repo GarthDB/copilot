@@ -60,18 +60,18 @@ var BgForm = React.createClass({
           <RadioGroup className="radioGroup" name="glucoseType" value="sensor" ref="glucoseType">
             <label htmlFor="meter">
               <span>Blood Drop</span>
-              <input type="radio" className="meter" value="Finger" onFocus={this.focusHandler}/>
+              <input id="meter" type="radio" className="meter" value="Finger" onFocus={this.focusHandler}/>
             </label>
             <label htmlFor="sensor">
               <span>Dexcom</span>
-              <input type="radio" className="sensor" value="Sensor" defaultChecked="true" onFocus={this.focusHandler}/>
+              <input id="sensor" type="radio" className="sensor" value="Sensor" defaultChecked="true" onFocus={this.focusHandler}/>
             </label>
           </RadioGroup>
           <label htmlFor="glucoseValue">
             <input type="text" pattern="\d*" className="glucoseValue" placeholder="BG" ref="glucoseValue" onFocus={this.focusHandler}/>
             <span>mg/dl</span>
           </label>
-          <textarea id="notes" placeholder="notes" ref="notes" onFocus={this.focusHandler}></textarea><br/>
+          <textarea id="notes" placeholder="notes" ref="notes" onFocus={this.focusHandler}></textarea>
           <label htmlFor="enteredBy">
             <input type="text" className="enteredBy" placeholder="initials" ref="enteredBy" onFocus={this.focusHandler}/>
           </label>
