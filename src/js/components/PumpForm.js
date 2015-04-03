@@ -46,27 +46,32 @@ var PumpForm = React.createClass({
   render: function() {
     return (
       <form onSubmit={this.submitHandler}>
-        <input type="hidden" name="eventType" value="Correction Bolus" ref="eventType"/>
-        <label htmlFor="carbsGiven">
-          <span>Carbs Given:</span>
-          <input type="number" step="any" min="0" id="carbsGiven" placeholder="Amount in grams" ref="carbsGiven"/>
-        </label>
-        <label htmlFor="glucoseValue">
-          <span>Glucose:</span>
-          <input type="number" step="any" id="glucoseValue" placeholder="Glucose Value" ref="glucoseValue"/>
-        </label>
-        <label htmlFor="insulinGiven">
-          <span>Insulin Given:</span>
-          <input type="number" step="any" min="0" id="insulinGiven" placeholder="Amount in units" ref="insulinGiven"/>
-        </label>
-        <label htmlFor="notes">Additional Notes, Comments:</label>
-        <textarea id="notes" ref="notes"/>
-        <label htmlFor="enteredBy">
-          <span>Entered By:</span>
-          <input type="text" id="enteredBy" ref="enteredBy" />
-        </label>
-        <button onClick={this.cancelHandler}>Cancel</button>
-        <button type="submit">Submit Form</button>
+        <div className="inputGroup">
+          <input type="hidden" name="eventType" value="Correction Bolus" ref="eventType"/>
+          <label htmlFor="carbsGiven">
+            <span>Carbs Given:</span>
+            <input type="number" step="any" min="0" id="carbsGiven" placeholder="Amount in grams" ref="carbsGiven"/>
+          </label>
+          <label htmlFor="glucoseValue">
+            <span>Glucose:</span>
+            <input type="number" step="any" id="glucoseValue" placeholder="Glucose Value" ref="glucoseValue"/>
+          </label>
+          <label htmlFor="insulinGiven">
+            <span>Insulin Given:</span>
+            <input type="number" step="any" min="0" id="insulinGiven" placeholder="Amount in units" ref="insulinGiven"/>
+          </label>
+          <label htmlFor="notes">Additional Notes, Comments:
+            <textarea id="notes" ref="notes"/>
+          </label>
+          <label htmlFor="enteredBy">
+            <span>Entered By:</span>
+            <input type="text" id="enteredBy" ref="enteredBy" />
+          </label>
+        </div>
+        <div className="buttonGroup">
+          <button className="cancel" onClick={this.cancelHandler}>Cancel</button>
+          <button className="save" type="submit">Save</button>
+        </div>
       </form>
     );
   }

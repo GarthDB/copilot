@@ -45,39 +45,43 @@ var ChampionForm = React.createClass({
   render: function() {
     return (
       <form>
-        <input type="hidden" name="eventType" value="Note" ref="eventType"/>
-        <label htmlFor="hundred">
-          <input type="checkbox" name="hundred" id="hundred"/>
-          <span>100 Club</span>
-        </label>
-        <label htmlFor="pumpSiteChange">
-          <input type="checkbox" name="pumpSiteChange" id="pumpSiteChange" ref="siteChange" value="Pump Site Change."/>
-          <span>Pump Site Change</span>
-        </label>
-        <label htmlFor="cgmSiteChange">
-          <input type="checkbox" name="cgmSiteChange" id="cgmSiteChange" ref="cgmSiteChange" value="CGM Site Change."/>
-          <span>CGM Site Change</span>
-        </label>
-        <label htmlFor="lancetChange">
-          <input type="checkbox" name="lancetChange" id="lancetChange" ref="lancetChange" value="Lancet Change."/>
-          <span>Lancet Change</span>
-        </label>
-        <label htmlFor="endoAppointment">
-          <input type="checkbox" name="endoAppointment" id="endoAppointment" ref="endoAppointment" value="Endo Appointment."/>
-          <span>Endo Appointment</span>
-        </label>
-        <label htmlFor="bloodWork">
-          <input type="checkbox" name="bloodWork" id="bloodWork" ref="bloodWork" value="Brave Blood Work."/>
-          <span>Brave Blood Work</span>
-        </label>
-        <label htmlFor="notes" className="extra-space" ref="notes">Additional Notes, Comments:</label>
-        <textarea id="notes"></textarea><br/>
-        <label htmlFor="enteredBy" ref="enteredBy">
-          <span>Entered By:</span>
-          <input type="text" id="enteredBy" value="" />
-        </label>
-        <button onClick={this.cancelHandler}>Cancel</button>
-        <button type="submit">Submit Form</button>
+        <div className="inputGroup">
+          <input type="hidden" name="eventType" value="Note" ref="eventType"/>
+          <label htmlFor="hundred">
+            <input type="checkbox" name="hundred" id="hundred"/>
+            <span>100 Club</span>
+          </label>
+          <label htmlFor="pumpSiteChange">
+            <input type="checkbox" name="pumpSiteChange" id="pumpSiteChange" ref="siteChange" value="Pump Site Change."/>
+            <span>Pump Site Change</span>
+          </label>
+          <label htmlFor="cgmSiteChange">
+            <input type="checkbox" name="cgmSiteChange" id="cgmSiteChange" ref="cgmSiteChange" value="CGM Site Change."/>
+            <span>CGM Site Change</span>
+          </label>
+          <label htmlFor="lancetChange">
+            <input type="checkbox" name="lancetChange" id="lancetChange" ref="lancetChange" value="Lancet Change."/>
+            <span>Lancet Change</span>
+          </label>
+          <label htmlFor="endoAppointment">
+            <input type="checkbox" name="endoAppointment" id="endoAppointment" ref="endoAppointment" value="Endo Appointment."/>
+            <span>Endo Appointment</span>
+          </label>
+          <label htmlFor="bloodWork">
+            <input type="checkbox" name="bloodWork" id="bloodWork" ref="bloodWork" value="Brave Blood Work."/>
+            <span>Brave Blood Work</span>
+          </label>
+          <label htmlFor="notes" className="extra-space" ref="notes">Additional Notes, Comments:</label>
+          <textarea id="notes"></textarea><br/>
+          <label htmlFor="enteredBy" ref="enteredBy">
+            <span>Entered By:</span>
+            <input type="text" id="enteredBy" value="" />
+          </label>
+        </div>
+        <div className="buttonGroup">
+          <button className="cancel" onClick={this.cancelHandler}>Cancel</button>
+          <button className="save" type="submit">Save</button>
+        </div>
       </form>
     );
   }
