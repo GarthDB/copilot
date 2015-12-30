@@ -1,12 +1,13 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import Clock from './components/clock.jsx'
+import BG from './components/bg.jsx'
 import { createStore, combineReducers } from 'redux'
-import { Provider, connect } from 'react-redux'
-import EntryReducer from './reducers/entry-reducer'
+import { Provider } from 'react-redux'
+import entries from './reducers/entries'
 
 const reducers = combineReducers({
-  EntryReducer
+  entries
 });
 
 let store = createStore(reducers)
@@ -26,12 +27,20 @@ xhr.onreadystatechange = function () {
     store.dispatch(addBGEntry(responseObj[0]));
   }
 };
+
 xhr.send();
 
+setInterval(function(){
+  xhr.open('GET', 'http://graciegrape.com/api/v1/entries.json?count=1');
+  xhr.send();
+}, 300000);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Clock />
+    <div>
+      <BG />
+      <Clock />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
